@@ -1,4 +1,5 @@
 import os
+
 import requests
 
 BASE_URL = 'http://api.weatherstack.com/current?'
