@@ -7,5 +7,4 @@ def get_weather(CITY):
     API_KEY = get_api_key()
     url = BASE_URL + "access_key=" +    API_KEY+ "&query=" + CITY
     response = requests.get(url).json()
-    temp = response['current']['temperature']
-    return temp
+    return response
