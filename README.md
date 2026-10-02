@@ -22,7 +22,7 @@ Create a git-ignored `secret.txt` next to the code containing your own Weatherst
 python GUI.py
 ```
 
-## Known issues
+## Notes
 
 - The free Weatherstack plan only supports plain `http`, so requests are not encrypted.
-- `get_weather.py` does not handle network errors or a missing `secret.txt`; the app will raise an exception instead of showing a message.
+- A network failure or a missing `secret.txt` shows "Could not reach the weather service", and an unknown city shows "City not found".

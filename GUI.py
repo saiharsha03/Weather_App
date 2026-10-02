@@ -4,15 +4,20 @@ import tkinter as tk
 def display_weather():
     city_name = city_entry.get()
 
-    resp = get_weather(city_name)
+    update_label.config(text="")
+    try:
+        resp = get_weather(city_name)
+    except Exception:
+        weather_label.config(text='Could not reach the weather service. Check your connection and secret.txt', fg="red")
+        return
 
     if 'current' not in resp:
-        weather_label.config(text='City not found')
+        weather_label.config(text='City not found', fg="red")
     else:
         city = resp['location']['name']
         country = resp['location']['country']
         temp = resp['current']['temperature']
-        weather_label.config(text=f'The temperature in {city}, {country} is {temp}°C)',fg="blue")
+        weather_label.config(text=f'The temperature in {city}, {country} is {temp}°C',fg="blue")
         if(temp>=30):
             update_label.config(text="Better get your sunscreen")
         elif(temp>=20):
