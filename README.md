@@ -25,5 +25,4 @@ python GUI.py
 ## Known issues
 
 - The free Weatherstack plan only supports plain `http`, so requests are not encrypted.
-- The branch for temperatures below zero calls `config()` with a positional argument and would raise an error.
-- The repository also contains a committed Replit `.pythonlibs` folder of installed packages that the app does not need.
+- `get_weather.py` does not handle network errors or a missing `secret.txt`; the app will raise an exception instead of showing a message.

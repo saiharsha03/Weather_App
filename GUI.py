@@ -20,7 +20,7 @@ def display_weather():
         elif(temp>=0):
             update_label.config(text="Get your jacket on, it's cold")
         else:
-            update_label.config("It's below freezing point. Gear up")
+            update_label.config(text="It's below freezing point. Gear up")
 
 root = tk.Tk()
 root.title("Weather App")
